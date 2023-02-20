@@ -6,11 +6,12 @@ import FriendList from "./FriendList/FriendList";
 import friends from "JSON/friends.json";
 import TransactionHistory from "./Transaction/Transaction";
 import transactions from "JSON/transactions.json";
+import { Layout } from "./Layout";
 
 
 export const App = () => {
   return (
-    <div>
+    <Layout>
      <Profile 
     avatar={user.avatar} 
     username={user.username} 
@@ -24,6 +25,6 @@ export const App = () => {
   <Statistics stats={data} />
   <FriendList friends={friends} />
   <TransactionHistory items={transactions} />
-    </div>
+  </Layout>
   );
 };

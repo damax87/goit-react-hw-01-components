@@ -1,33 +1,41 @@
 import PropTypes from "prop-types";
+import { ProfileContainer } from './Profile.styled'
+import { ProfileDescription } from "./Profile.styled";
+import { ProfileAvatar } from "./Profile.styled";
+import { ProfileName } from "./Profile.styled";
+import { ProfileTagLocation } from "./Profile.styled";
+import { ProfileStats } from "./Profile.styled";
+import { ProfileList } from "./Profile.styled";
+import { ProfileLabel } from "./Profile.styled";
+import { ProfileQuantity } from "./Profile.styled";
 export default function Profile({ avatar, username, tag, location, followers, views, likes }) {
-  
+    
   return (
-<div className="profile">
-<div className="description">
-  <img
+<ProfileContainer>
+<ProfileDescription>
+  <ProfileAvatar
     src={avatar}
     alt="User avatar"
-    className="avatar"
   />
-  <p className="name">{username}</p>
-  <p className="tag">@{tag}</p>
-  <p className="location">{location}</p>
-</div>
-<ul className="stats">
-  <li>
-    <span className="label">Followers</span>
-    <span className="quantity"> {followers}</span>
-  </li>
-  <li>
-    <span className="label">Views</span>
-    <span className="quantity"> {views}</span>
-  </li>
-  <li>
-    <span className="label">Likes</span>
-    <span className="quantity"> {likes}</span>
-  </li>
-</ul>
-</div>
+  <ProfileName>{username}</ProfileName>
+  <ProfileTagLocation>@{tag}</ProfileTagLocation>
+  <ProfileTagLocation>{location}</ProfileTagLocation>
+</ProfileDescription>
+<ProfileStats>
+  <ProfileList>
+    <ProfileLabel>Followers</ProfileLabel>
+    <ProfileQuantity> {followers}</ProfileQuantity>
+  </ProfileList>
+  <ProfileList>
+    <ProfileLabel>Views</ProfileLabel>
+    <ProfileQuantity> {views}</ProfileQuantity>
+  </ProfileList>
+  <ProfileList>
+    <ProfileLabel>Likes</ProfileLabel>
+    <ProfileQuantity> {likes}</ProfileQuantity>
+  </ProfileList>
+</ProfileStats>
+</ProfileContainer>
   );
 };
 
